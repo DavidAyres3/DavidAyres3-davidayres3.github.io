@@ -13,6 +13,11 @@ export default function Sounds (){
   let fireplace = fireplaceSound
   let end = kitchenTimer
 
+  forest.loop = true
+  rain.loop = true
+  coffee.loop = true
+  fireplace.loop = true
+
 
   return {
    forest,
