@@ -1,5 +1,6 @@
 import {
   buttonPlay,
+  buttonPause,
   buttonStop,
   buttonTurnDown,
   buttonTurnUp,
@@ -31,6 +32,11 @@ buttonPlay.addEventListener('click', function() {
   }
 })
 
+buttonPause.addEventListener('click', function(){
+  controls.pause()
+}
+  
+  
 buttonStop.addEventListener('click', function(){
   controls.pause()
   timer.reset()
