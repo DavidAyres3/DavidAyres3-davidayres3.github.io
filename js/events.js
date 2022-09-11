@@ -33,9 +33,9 @@ buttonPlay.addEventListener('click', function() {
 })
 
 buttonPause.addEventListener('click', function(){
+  timer.hold()
   controls.pause()
-}
-  
+})
   
 buttonStop.addEventListener('click', function(){
   controls.pause()
