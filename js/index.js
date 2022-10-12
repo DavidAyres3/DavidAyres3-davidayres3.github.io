@@ -7,7 +7,6 @@ import {
   buttonPause,
   minutesDisplay,
   secondsDisplay,
-
 } from "./elements.js"
 
 const controls = Controls({

@@ -18,7 +18,6 @@ export default function Timer ({
   clearTimeout(timerTimeOut)
 
   }
-
   function countdown(){
     timerTimeOut = setTimeout(function() {
     let seconds = Number(secondsDisplay.textContent) 

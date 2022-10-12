@@ -18,7 +18,6 @@ export default function Sounds (){
   coffee.loop = true
   fireplace.loop = true
 
-
   return {
    forest,
    rain,

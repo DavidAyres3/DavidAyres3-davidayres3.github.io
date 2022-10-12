@@ -8,19 +8,23 @@
   font-size: 62.5%;
   --white: hsl(0, 0%, 100%);
   --black: hsl(240, 5%, 7%);
-  --text-color: hsl(240, 6%, 21%);
-  --card-gray: hsl(240, 9%, 89%);
+  --text-color: hsl(240, 45%, 2%);
   --card-black: hsl(240, 6%, 17%);
   --gray: hsl(240, 7%, 78%);
-  --card-active: hsl(194, 97%, 31%);
+  --card-active: hsla(180, 3%, 6%, 0.418);
   --card-black-active: hsl(195, 74%, 15%);  
 }
 
-html,
 body {
-  font-size: 1.6rem;
-  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Roboto';
+  background-color: #f2f2f7;
+  transition: 0.4s;
 }
+
 
 main {
   min-height: 100vh;
@@ -39,8 +43,6 @@ main {
 
   text-align: center;
   text-transform: uppercase;
-
-  
 }
 
 .controls {
@@ -53,11 +55,12 @@ main {
 .controls button {
   background-color: transparent;
   border: none;
-  cursor: pointer;
+
 }
 
 .controls button svg {
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .controls button:hover svg {
@@ -78,7 +81,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--card-gray);
+  background: #f2f2f7;
   border-radius: 24px;
   cursor: pointer;
   transition: 0.2s;
@@ -86,17 +89,15 @@ main {
   gap: 3.2rem;
   padding-inline: 2.4rem;
 }
-
 .sounds button:hover {
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
   transform: scale(1.1);
 }
 
-
 .sounds button .range {
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--text-color) ;
+  background-color: #ffffff ;
   width: 100%;
   height: .4rem;
   border-radius: 5px;
@@ -107,36 +108,31 @@ main {
   appearance: none;
   width: 1.6rem;
   height: 1.6rem;
-  background-color: var(--text-color);
+  background-color: #ffffff;
   border-radius: 100%;
 
 }
 .sounds button .range::-webkit-slider-thumb,
 .sounds button .range {
-  background-color: var(--white) ;
+  background-color: #ffffff ;
 }
+
 
 .controls button {
   cursor: default;
 }
 
 .controls button svg path {
-  fill: #848488;
+  fill: #000000;
+
 }
 
 .sounds button:hover {
-  transform: scale(1);
-  cursor: default;
+  transform: scale(1.2);
+  cursor:pointer;
 }
 
-.sounds button:hover {
-  background: var(--card-active);
-  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
-}
 
-button svg path {
-  fill: black;
-}
 
 button:hover svg {
   transform: scale(1);
@@ -146,52 +142,76 @@ button:hover svg {
   display: none;
 }
 
-.darkmode {
+
+/* Darkmode*/
+
+
+.minutes.dark, .dots.dark, .seconds.dark{
+  color:hsla(192, 82%, 49%, 0.514);
+
+  border-radius: 2rem;
+}
+
+.playp.dark, .pausep.dark, .stopp.dark, .upp.dark, .downp.dark {
+  fill: hsla(0, 0%, 100%, 0.514);
+}
+
+.forest-sound.dark, .rain-sound.dark, .coffee-sound.dark, .fireplace-sound.dark{
+  background: #0f0d0d;
+}
+
+.forest-sound.dark path, .rain-sound.dark path, .coffee-sound.dark path, .fireplace-sound.dark path{
+  fill: #ffffff;
+}
+body.dark{
+  background-color: #0f0d0d;
+}
+
+.switch{
+position: absolute;
+  width: 4rem;
+  height: 2rem;
+}
+
+.change {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider{
   position: absolute;
-  top: 6rem;
-  right: 6rem;
-  border: none;
-  background: transparent;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 7);
+  transition: 0.4s;
+  border-radius: 30px;
 }
 
-
-.dark {
-  background-color: var(--black);
-  color: var(--white);
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 20px;
+  left: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ffffff, #000000 70%);
+  transition: 0.4s;
 }
 
-.dark .controls svg path {
-  fill: var(--gray);
-  
+.change:checked + .slider {
+  background-color: #faf5f5;
 }
 
-.dark .controls button svg path {
-  opacity: 0.5;
-
-}
-
-.dark .sounds button {
-  background-color: var(--card-black);
-}
-
-.dark .sounds button  svg path {
-  fill: var(--gray);
-
-}
-
-.dark .sounds button .range::-webkit-slider-thumb,
-.dark .sounds button .range {
-  background-color: var(--white) ;
-
-}
-
-/* ==============================Active================== */
-
-.dark .sounds button:hover {
-  background-color: var(--card-black-active);
-}
-
-.dark .sounds button svg path {
-  fill: var(--white);
+.change:checked + .slider:before{
+  left: calc(100% - 1.7rem);
+  background: linear-gradient(40deg, #000000, #ffffff 70%);
+  box-shadow: 
+  inset -3px -2px -5px -2px #8983f7,
+  inset -10px -4px 0 0 #a3dafb;
 }

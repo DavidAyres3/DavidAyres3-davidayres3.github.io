@@ -13,9 +13,6 @@ const volumeForest = document.querySelector('input')
 const volumeRain = buttonRain.querySelector('input')
 const volumeCoffee = buttonCoffee.querySelector('input')
 const volumeFireplace = buttonFireplace.querySelector('input')
-const buttonDark = document.querySelector('.buttonDark')
-const buttonLight = document.querySelector('.light')
-
 
 export {
   buttonPlay,
@@ -33,6 +30,4 @@ export {
   volumeRain,
   volumeCoffee,
   volumeFireplace,
-  buttonDark,
-  buttonLight
 }

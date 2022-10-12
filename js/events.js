@@ -14,9 +14,29 @@ import {
   volumeRain,
   volumeCoffee,
   volumeFireplace,
-  buttonDark,
-  buttonLight
 } from "./elements.js"
+
+import{
+  input,
+  body,
+  min,
+  sec,
+  path,
+  dots,
+  pathf,
+  pathr,
+  pathc,
+  pathfp,
+  playp,
+  pausep,
+  stopp,
+  upp,
+  downp,
+  fs,
+  rs,
+  cs,
+  fps
+} from "./dark.js"
 
 export default function (
   {controls, timer, sounds}
@@ -86,18 +106,27 @@ buttonFireplace.addEventListener('click', function(){
   volumeFireplace.addEventListener('input', function () {
     sounds.fireplace.volume = volumeFireplace.value
   })
-
-  buttonDark.addEventListener('click', function() {
-    document.body.classList.add("light")
-    document.body.classList.remove("dark")
-    buttonDark.classList.add("hide")
-    buttonLight.classList.remove("hide")
-  });
-
-  buttonLight.addEventListener('click', function() {
-    document.body.classList.add("dark")
-    document.body.classList.remove("light")
-    buttonLight.classList.add("hide")
-    buttonDark.classList.remove("hide")
-  })
 }
+const toggleThemeMode = () => {
+  input.classList.toggle("dark")
+  body.classList.toggle("dark")
+  min.classList.toggle("dark")
+  sec.classList.toggle("dark")
+  path.classList.toggle("dark")
+  dots.classList.toggle("dark")
+  pathf.classList.toggle("dark")
+  pathr.classList.toggle("dark")
+  pathc.classList.toggle("dark")
+  pathfp.classList.toggle("dark")
+  playp.classList.toggle("dark")
+  pausep.classList.toggle("dark")
+  stopp.classList.toggle("dark")
+  upp.classList.toggle("dark")
+  downp.classList.toggle("dark")
+  fs.classList.toggle("dark")
+  rs.classList.toggle("dark")
+  cs.classList.toggle("dark")
+  fps.classList.toggle("dark")
+}
+
+input.onchange = toggleThemeMode
