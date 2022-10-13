@@ -215,3 +215,40 @@ position: absolute;
   inset -3px -2px -5px -2px #8983f7,
   inset -10px -4px 0 0 #a3dafb;
 }
+
+@media (max-width: 400px){
+  main {
+    display: grid;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .timer span{
+    font-size: 10rem;
+    padding: .5rem;
+    margin-left: 1vh
+  }
+  .controls{
+    padding: 1rem;
+    gap: 5vh;
+  }
+
+}
+@media (max-width: 850px){
+
+  main {
+    display: grid;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .timer span{
+    font-size: 10rem;
+    padding: .5rem;
+    margin-left: 1vh
+  }
+  .controls{
+    padding: 1rem;
+    gap: 5vh;
+  }
+}
