@@ -216,6 +216,7 @@ position: absolute;
   inset -10px -4px 0 0 #a3dafb;
 }
 
+
 @media (max-width: 400px){
   main {
     display: grid;
@@ -223,6 +224,9 @@ position: absolute;
     margin: 0;
   }
 
+  .timer {
+    text-align: right;
+  }
   .timer span{
     font-size: 10rem;
     padding: .5rem;
@@ -232,9 +236,9 @@ position: absolute;
     padding: 1rem;
     gap: 5vh;
   }
-
 }
-@media (max-width: 850px){
+
+@media (max-width: 800px){
 
   main {
     display: grid;
@@ -243,12 +247,21 @@ position: absolute;
   }
 
   .timer span{
-    font-size: 10rem;
-    padding: .5rem;
-    margin-left: 1vh
+    font-size: 13.5rem;
+    padding: 1rem;
+    margin-left: 2vh;
   }
   .controls{
     padding: 1rem;
-    gap: 5vh;
+    gap: 10vh;
+    justify-content: center;
+  }
+
+  .sounds  {
+    margin-top: 10vh;
+    padding: 1rem;
+    gap: 10vh;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
   }
 }
